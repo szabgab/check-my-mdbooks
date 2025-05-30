@@ -8,6 +8,7 @@ checks = {
 
 def check_repo(base_dir, repo_url):
     print("-----")
+    errors = 0
 
     
     print(f"repo_url: {repo_url}")
@@ -36,17 +37,26 @@ def check_repo(base_dir, repo_url):
                         value = row.split(":")[-1].strip()
                         if value != expected_value:
                             print(f"Mismatch in {file_name}: field {field}\nexpected value: {expected_value}\n  actual value: {value}")
+                            errors  += 1
                             
                         #print(f"field {field} expected value: {expected_value} actual value: {value}")
+    return errors
 
 
 def main():
     base_dir = os.path.dirname(os.getcwd())
     print(f"base_dir: {base_dir}")
+    errors = 0
     for repo_url in [
         "https://github.com/szabgab/rust.code-maven.com/"
     ]:
-        check_repo(base_dir, repo_url)
+        errors += check_repo(base_dir, repo_url)
 
+    print("--------------------")
+    if errors > 0:
+        print(f"Found {errors} errors")
+        exit(errors)
+    else:
+        print("Everything looks fine")
 
 main()
