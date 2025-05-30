@@ -1,6 +1,6 @@
 import os
 
-checks = {
+CHECKS = {
     "MDBOOK_VERSION": "0.4.51", # https://github.com/rust-lang/mdBook/
     "EMBEDIFY_VERSION": "0.2.13", # https://github.com/MR-Addict/mdbook-embedify/
     "ALERTS_VERSION": "0.7.0", # https://github.com/lambdalisue/rs-mdbook-alerts
@@ -37,7 +37,7 @@ def check_repo(base_dir, repo_url):
         file_path = os.path.join(workflows_dir, file_name)
         with open(file_path) as fh:
             for row in fh:
-                for field, expected_value in checks.items():
+                for field, expected_value in CHECKS.items():
                     if f" {field}:" in row:
                         row = row.rstrip()
                         value = row.split(":")[-1].strip()
