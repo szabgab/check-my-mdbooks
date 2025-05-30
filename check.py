@@ -7,15 +7,24 @@ checks = {
 }
 
 def check_repo(base_dir, repo_url):
-    ci = os.environ.get("CI")
-    print(f"CI: {ci}")
-                        
+
+
     
     print(f"repo_url: {repo_url}")
     repo_url = repo_url.rstrip("/")
     repo_name = repo_url.split("/")[-1]
     print(f"repo_name: {repo_name}")
-    workflows_dir = os.path.join(base_dir, repo_name, ".github", "workflows")
+
+    ci = os.environ.get("CI")
+    print(f"CI: {ci}")
+    if ci:
+        result = os.system(f"git clone --depth 1 {repo_url}")
+        print(f"git clone result: {result}")
+        workflows_dir = os.path.join(repo_name, ".github", "workflows")
+    else:
+        workflows_dir = os.path.join(base_dir, repo_name, ".github", "workflows")
+
+
     print(f"workflows_dir: {workflows_dir}")
     for file_name in os.listdir(workflows_dir):
         file_path = os.path.join(workflows_dir, file_name)
