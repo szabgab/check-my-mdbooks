@@ -1,14 +1,27 @@
 import os
 
 CHECKS = {
-    "MDBOOK_VERSION": "0.4.51", # https://github.com/rust-lang/mdBook/
+    "MDBOOK_VERSION": "0.4.51",   # https://github.com/rust-lang/mdBook/
     "EMBEDIFY_VERSION": "0.2.13", # https://github.com/MR-Addict/mdbook-embedify/
-    "ALERTS_VERSION": "0.7.0", # https://github.com/lambdalisue/rs-mdbook-alerts
+    "ALERTS_VERSION": "0.7.0",    # https://github.com/lambdalisue/rs-mdbook-alerts
+    "LINKCHECK_VERSION": "0.7.7", # https://github.com/Michael-F-Bryan/mdbook-linkcheck
 }
 
 REPOS =[
         "https://github.com/szabgab/rust.code-maven.com/",
         "https://github.com/szabgab/mdbook.code-maven.com/",
+        "https://github.com/szabgab/mdbooks.code-maven.com/",
+        "https://github.com/szabgab/rust-he.code-maven.com/",
+        "https://github.com/szabgab/python-he.code-maven.com/",
+        "https://github.com/szabgab/c.code-maven.com/",
+        "https://github.com/szabgab/exercises.code-maven.com/",
+        "https://github.com/szabgab/git.code-maven.com/",
+        "https://github.com/szabgab/git-he.code-maven.com/",
+        "https://github.com/szabgab/groovy.code-maven.com/",
+        "https://github.com/szabgab/he.code-maven.com/",
+        "https://github.com/szabgab/ruby.code-maven.com/",
+        "https://github.com/szabgab/web3.code-maven.com/",
+        "https://github.com/szabgab/axum/",
 ]
 
 
