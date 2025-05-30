@@ -6,6 +6,12 @@ checks = {
     "ALERTS_VERSION": "0.7.0", # https://github.com/lambdalisue/rs-mdbook-alerts
 }
 
+REPOS =[
+        "https://github.com/szabgab/rust.code-maven.com/",
+        "https://github.com/szabgab/mdbook.code-maven.com/",
+]
+
+
 def check_repo(base_dir, repo_url):
     print("-----")
     errors = 0
@@ -47,9 +53,7 @@ def main():
     base_dir = os.path.dirname(os.getcwd())
     print(f"base_dir: {base_dir}")
     errors = 0
-    for repo_url in [
-        "https://github.com/szabgab/rust.code-maven.com/"
-    ]:
+    for repo_url in REPOS:
         errors += check_repo(base_dir, repo_url)
 
     print("--------------------")
