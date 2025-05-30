@@ -1,13 +1,13 @@
 import os
 
 checks = {
-    "MDBOOK_VERSION": "0.4.44",
-    "EMBEDIFY_VERSION": "0.2.12",
-    "ALERTS_VERSION": "0.7.0",
+    "MDBOOK_VERSION": "0.4.51", # https://github.com/rust-lang/mdBook/
+    "EMBEDIFY_VERSION": "0.2.13", # https://github.com/MR-Addict/mdbook-embedify/
+    "ALERTS_VERSION": "0.7.0", # https://github.com/lambdalisue/rs-mdbook-alerts
 }
 
 def check_repo(base_dir, repo_url):
-
+    print("-----")
 
     
     print(f"repo_url: {repo_url}")

@@ -10,6 +10,6 @@ jobs:
       - name: Checkout site source
         uses: actions/checkout@v4
 
-      - name: Download processor
+      - name: Check the mdbooks
         run: |
           python check.py
